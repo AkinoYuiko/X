@@ -12,25 +12,11 @@
 [proxy_list]
 
 # MyList
-(^|\.)apkmirror\.com$
-(^|\.)bit\.no\.com$
-(^|\.)btlibrary\.me$
 (^|\.)cccat\.cc$
-(^|\.)cloudfront\.net$
-(^|\.)dmm\.co\.jp$
-(^|\.)gvt\w\.com$
-(^|\.)microsoft\.com$
-(^|\.)ping\.pe$
-(^|\.)s3\.amazonaws\.com$
-(^|\.)tumbex\.com$
-(^|\.)tvb\.com$
-(^|\.)twdvd\.com$
-(^|\.)ec2-54-210-142-85\.computer-1\.amazonaws\.com$
-(^|\.)ec2-54-174-24-124\.computer-1\.amazonaws\.com$
-(^|\.)ec2-54-174-178-70\.computer-1\.amazonaws\.com$
-(^|\.)ec2-54-175-2-194\.computer-1\.amazonaws\.com$
-(^|\.)ec2-54-210-54-246\.computer-1\.amazonaws\.com$
+(^|\.)dlercloud\.com$
+(^|\.)rixcloud\.(com|me)$
 (^|\.)raw\.githubusercontent\.com$
+(^|\.)github\.com$
 
 #GFWList IP start
 85.17.73.31
@@ -99,6 +85,20 @@
 (^|\.)\w*twitter\w*\.\w*$
 (^|\.)\w*whatsapp\w*\.\w*$
 (^|\.)\w*youtube\w*\.\w*$
+
+# ACL4SSR Custom
+(^|\.)apkmirror\.com$
+(^|\.)bit\.no\.com$
+(^|\.)btlibrary\.me$
+(^|\.)cloudfront\.net$
+(^|\.)dmm\.co\.jp$
+(^|\.)gvt\w\.com$
+(^|\.)microsoft\.com$
+(^|\.)ping\.pe$
+(^|\.)amazonaws\.com$
+(^|\.)tumbex\.com$
+(^|\.)tvb\.com$
+(^|\.)twdvd\.com$
 
 #GFWList
 (^|\.)(.*)\.2\.bahamut\.com\.tw$
