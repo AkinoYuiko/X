@@ -278,6 +278,7 @@
 (^|\.)airasia\.com$
 (^|\.)airconsole\.com$
 (^|\.)airvpn\.org$
+(^|\.)ais\d{2}\.com$
 (^|\.)aisex\.com$
 (^|\.)aiss\.anws\.gov\.tw$
 (^|\.)ait\.org\.tw$
