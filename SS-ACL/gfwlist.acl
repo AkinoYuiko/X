@@ -12,11 +12,12 @@
 [proxy_list]
 
 # MyList
-(^|\.)cccat\.cc$
+(^|\.)cccat\.(cc|tw)$
 (^|\.)dlercloud\.com$
 (^|\.)rixcloud\.(com|me)$
 (^|\.)raw\.githubusercontent\.com$
 (^|\.)github\.com$
+(^|\.)maying\.co$
 
 #GFWList IP start
 85.17.73.31
