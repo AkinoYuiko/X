@@ -18,6 +18,7 @@
 (^|\.)githubusercontent\.com$
 (^|\.)github\.com$
 (^|\.)ip\.sb$
+(^|\.)v2ray\.(com|cool)$
 
 #GFWList IP start
 85.17.73.31
