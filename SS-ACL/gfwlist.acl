@@ -15,8 +15,9 @@
 (^|\.)cccat\.cc$
 (^|\.)dlercloud\.com$
 (^|\.)rixcloud\.(com|me)$
-(^|\.)raw\.githubusercontent\.com$
+(^|\.)githubusercontent\.com$
 (^|\.)github\.com$
+(^|\.)ip\.sb$
 
 #GFWList IP start
 85.17.73.31
