@@ -19,6 +19,7 @@
 (^|\.)github\.com$
 (^|\.)ip\.sb$
 (^|\.)v2ray\.(com|cool)$
+(^|\.)googleapis\.(cn|com)$
 
 #GFWList IP start
 85.17.73.31
