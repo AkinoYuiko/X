@@ -19,7 +19,7 @@
 (^|\.)maying\.co$
 (^|\.)ip\.sb$
 (^|\.)v2ray\.(com|cool)$
-(^|\.)googleapis\.(cn|com)$
+(^|\.)google.*\.(cn|com)$
 (^|\.)mojang\.com$
 (^|\.)minecraft\.net$
 
