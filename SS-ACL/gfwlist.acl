@@ -20,6 +20,7 @@
 (^|\.)ip\.sb$
 (^|\.)v2ray\.(com|cool)$
 (^|\.)google.*\.(cn|com)$
+(^|\.)ggpht\.com$
 (^|\.)mojang\.com$
 (^|\.)minecraft\.net$
 
