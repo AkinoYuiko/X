@@ -1,6 +1,6 @@
 #**********************************************************************
 # 
-# 2019年1月7日 1:58
+# 2019年1月7日 2:22
 # 转自https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/fullgfwlist.acl
 #
 #**********************************************************************
@@ -1220,8 +1220,6 @@
 (^|\.)dipity\.com$
 (^|\.)directcreative\.com$
 (^|\.)discoins\.com$
-(^|\.)discordapp\.com$
-(^|\.)discordapp\.net$
 (^|\.)discuss\.com\.hk$
 (^|\.)discuss4u\.com$
 (^|\.)dish\.com$
@@ -5586,9 +5584,7 @@
 (^|\.)bbc\.com$
 
 # Discord
-(^|\.)discord\.gg$
-(^|\.)discordapp\.com$
-(^|\.)discordapp\.net$
+(^|\.)discord.*\.(com|net|gg)$
 
 # Epicgames
 (^|\.)\w*epicgames\w*\.\w*$
