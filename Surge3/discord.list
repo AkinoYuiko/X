@@ -2,3 +2,4 @@ USER-AGENT,Discord,force-remote-dns
 DOMAIN-SUFFIX,discord.gg,force-remote-dns
 DOMAIN-SUFFIX,discordapp.com,force-remote-dns
 DOMAIN-SUFFIX,discordapp.net,force-remote-dns
+DOMAIN-SUFFIX,discordcdn.com,force-remote-dns
