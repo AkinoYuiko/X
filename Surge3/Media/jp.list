@@ -1,0 +1,25 @@
+# > (JP)
+# > DMM/Fanza
+DOMAIN-SUFFIX,dmm.com
+DOMAIN-SUFFIX,dmm.co.jp
+
+# > Pixiv
+DOMAIN-SUFFIX,pixiv.net
+DOMAIN-SUFFIX,pximg.net
+
+# > Niconico
+DOMAIN-SUFFIX,nicovideo.jp
+DOMAIN-SUFFIX,socdm.com
+DOMAIN-SUFFIX,smilevideo.jp
+DOMAIN-SUFFIX,nimg.jp
+DOMAIN-SUFFIX,dmc.nico
+
+# > Hulu(フールー)
+DOMAIN-SUFFIX,happyon.jp
+
+# > AbemaTV
+USER-AGENT,AbemaTV*
+DOMAIN-SUFFIX,abema.io
+DOMAIN-SUFFIX,ameba.jp
+DOMAIN-SUFFIX,hayabusa.io
+DOMAIN,linear-abematv.akamaized.net
