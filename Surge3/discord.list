@@ -1,5 +1,9 @@
+# > Discord
+## for macOS
 PROCESS-NAME,Discord Helper
+## for iOS
 USER-AGENT,Discord*
+## rules
 DOMAIN-SUFFIX,discord.gg
 DOMAIN-SUFFIX,discordapp.com
 DOMAIN-SUFFIX,discordapp.net
