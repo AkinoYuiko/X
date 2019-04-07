@@ -32,6 +32,9 @@ DOMAIN-SUFFIX,hayabusa.io
 DOMAIN,linear-abematv.akamaized.net
 
 # > Spotify
+# macOS
+PROCESS-NAME,Spotify
+# common
 USER-AGENT,spotify*
 DOMAIN-SUFFIX,scdn.co
 DOMAIN-SUFFIX,spotify.com
