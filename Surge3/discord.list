@@ -5,6 +5,7 @@ PROCESS-NAME,Discord Helper
 USER-AGENT,Discord*
 ## rules
 DOMAIN-SUFFIX,discord.gg
+DOMAIN-SUFFIX,discord.media
 DOMAIN-SUFFIX,discordapp.com
 DOMAIN-SUFFIX,discordapp.net
 DOMAIN-SUFFIX,discordcdn.com
