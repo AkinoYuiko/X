@@ -1,0 +1,5 @@
+# > Discord
+USER-AGENT,discord*,PROXY
+DOMAIN-SUFFIX,discordapp.com,PROXY
+DOMAIN-SUFFIX,discordapp.net,PROXY
+DOMAIN-SUFFIX,discord.media,PROXY
