@@ -1,7 +1,7 @@
+# Client
 # > Proxy
 PROCESS-NAME,v2ray
 PROCESS-NAME,ss-local
-PROCESS-NAME,Surge*
 # > Download
 PROCESS-NAME,aria2c
 PROCESS-NAME,fdm
