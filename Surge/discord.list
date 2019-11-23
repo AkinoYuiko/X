@@ -2,7 +2,7 @@
 ## for macOS
 PROCESS-NAME,Discord Helper
 ## for iOS
-USER-AGENT,Discord*
+#USER-AGENT,Discord*
 ## rules
 DOMAIN-SUFFIX,discord.gg
 DOMAIN-SUFFIX,discord.media
