@@ -3,9 +3,8 @@
 #!system=ios
 
 [URL Rewrite]
-^https?:\/\/mage(v6)?\.if\.qidian\.com\/argus\/api\/v1\/individual\/getQdPersonalRecBookList - reject
 ^https?:\/\/mage(v6)?\.if\.qidian\.com\/argus\/api\/v1\/adv - reject
 ^https?:\/\/mage(v6)?\.if\.qidian\.com\/argus\/api\/v4\/client - reject
 
 [MITM]
-hostname = %APPEND% *.if.qidian.com, www.qchannel01.cn
+hostname = %APPEND% *.if.qidian.com
