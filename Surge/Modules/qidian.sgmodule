@@ -2,9 +2,8 @@
 #!desc=Qidian app removes opening ads.
 #!system=ios
 
-[Rule]
-URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT
-URL-REGEX,https://mage(v6)?.qidian.com/argus/api/v4,REJECT
+[URL Rewrite]
+^https?:\/\/mage(v6)?\.qidian\.com\/argus\/api\/v4 - reject
 
 [MITM]
-hostname = %APPEND% mage.if.qidian.com, magev6.if.qidian.com
+hostname = %APPEND% *.if.qidian.com
