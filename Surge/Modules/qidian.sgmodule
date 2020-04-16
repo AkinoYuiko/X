@@ -3,7 +3,7 @@
 #!system=ios
 
 [URL Rewrite]
-^https?:\/\/mage(v6)?\.qidian\.com\/argus\/api\/v4 - reject
+^https?:\/\/mage(v6)?\.if\.qidian\.com\/argus\/api\/v4 - reject
 
 [MITM]
 hostname = %APPEND% *.if.qidian.com
