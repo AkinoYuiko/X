@@ -8,4 +8,4 @@
 ^https?:\/\/mage(v6)?\.if\.qidian\.com\/argus\/api\/v4\/client - reject
 
 [MITM]
-hostname = %APPEND% *.if.qidian.com
+hostname = %APPEND% *.if.qidian.com, www.qchannel01.cn
