@@ -3,4 +3,4 @@
 目前主要有以下这些：
 
 * Surge 4
-* QuantumultX
+* Clash Pro
