@@ -2,15 +2,6 @@ payload:
   # ---(Apple)---
   # > Apple URL Shortener
   - DOMAIN-SUFFIX,appsto.re
-  # > iBooks Store download
-  - DOMAIN,books.itunes.apple.com
-  # > App Store Preview
-  - DOMAIN,apps.apple.com
-  - DOMAIN,itunes.apple.com
-  # > Spotlight
-  - DOMAIN,api-glb-sea.smoot.apple.com
-  # > Look Up
-  - DOMAIN,lookup-api.apple.com
-  - DOMAIN-SUFFIX,smoot.apple.com
-  # > Apple Music Web
-  - DOMAIN,beta.music.apple.com
+  # > Apple Music
+  - DOMAIN-SUFFIX,apple.com
+  - DOMAIN-SUFFIX,mzstatic.com
