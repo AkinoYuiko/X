@@ -1,7 +1,7 @@
 payload:
   # ---(Apple)---
   # > Apple URL Shortener
-  - DOMAIN-SUFFIX,appsto.re
+  - '+.appsto.re'
   # > Apple Music
-  - DOMAIN-SUFFIX,apple.com
-  - DOMAIN-SUFFIX,mzstatic.com
+  - '+.apple.com'
+  - '+.mzstatic.com'
