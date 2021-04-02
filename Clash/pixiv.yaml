@@ -1,4 +1,4 @@
 payload:
-  - DOMAIN-SUFFIX,pixiv.net
-  - DOMAIN-SUFFIX,pixiv.org
-  - DOMAIN-SUFFIX,pximg.net
+  - '+.pixiv.net'
+  - '+.pixiv.org'
+  - '+ pximg.net'
