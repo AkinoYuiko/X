@@ -29,3 +29,4 @@ payload:
   - DOMAIN-KEYWORD,peer_id
   - DOMAIN-KEYWORD,announce
   - DOMAIN-KEYWORD,torrent
+  - DOMAIN-KEYWORD,aria2
