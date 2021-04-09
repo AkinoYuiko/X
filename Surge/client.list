@@ -2,6 +2,7 @@
 # > Proxy
 PROCESS-NAME,v2ray
 PROCESS-NAME,ss-local
+PROCESS-NAME,UUBooster
 # > Download
 PROCESS-NAME,aria2c
 PROCESS-NAME,fdm
