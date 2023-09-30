@@ -1,6 +1,4 @@
-# macOS
-PROCESS-NAME,Mail
 # gmail & outlook
-DOMAIN-SUFFIX,gmail.com
-DOMAIN-SUFFIX,hotmail.com
-DOMAIN,outlook.office365.com
+.gmail.com
+.hotmail.com
+outlook.office365.com
