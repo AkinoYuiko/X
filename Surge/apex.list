@@ -2,6 +2,7 @@ DOMAIN-SUFFIX,stryder.respawn.com
 DOMAIN,rtm.tnt-ea.com
 DOMAIN-SUFFIX,ea.com
 DOMAIN-SUFFIX,easyanticheat.net
+DOMAIN,R5-pc.s3.smazonaws.com
 IP-CIDR,3.0.0.0/4
 IP-CIDR,3.1.250.122/32
 IP-CIDR,3.24.157.0/24
