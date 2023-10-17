@@ -1,7 +1,7 @@
 DOMAIN-SUFFIX,stryder.respawn.com
 DOMAIN,rtm.tnt-ea.com
 DOMAIN-SUFFIX,ea.com
-DOMAIN,hydra.easyanticheat.net
+DOMAIN-SUFFIX,easyanticheat.net
 IP-CIDR,1.13.172.0/24,no-resolve
 IP-CIDR,11.63.6.50/32,no-resolve
 IP-CIDR,11.0.0.0/4,no-resolve
