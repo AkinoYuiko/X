@@ -1,0 +1,16 @@
+#!name = Google Redirect
+#!desc = 重定向谷歌搜索/图书/地图
+#!author = Civi
+#!date = 2023-11-27 21:36:17
+
+[General]
+force-http-engine-hosts = *.google.cn
+
+[Rewrite]
+^https?://(www.)?(g|google)\.(cn|com.hk|co.jp|com.sg|com.tw) https://www.google.com 302
+^https?://books\.google\.(cn|.com.hk|co.jp|com.sg|com.tw) https://books.google.com 302
+^https?://(ditu|maps)\.(g|google)\.cn https://maps.google.com 302
+
+[MITM]
+
+hostname = *.google.*
