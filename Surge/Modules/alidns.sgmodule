@@ -1,0 +1,6 @@
+[General]
+dns-server = system
+encrypted-dns-server = quic://dns.alidns.com
+
+[Host
+dns.alidns.com = 223.5.5.5, 223.6.6.6
