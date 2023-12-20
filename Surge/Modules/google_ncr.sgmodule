@@ -1,12 +1,13 @@
 #!name=Google Redirect
 #!desc=重定向谷歌搜索/图书/地图
+
 [General]
 force-http-engine-hosts = %APPEND% *.google.cn
 
 [URL Rewrite]
-^https?://(www.)?(g|google)\.(cn|com.hk|co.jp|com.sg|com.tw) https://www.google.com 302
+^https?://(www.)?google\.(cn|com.hk|co.jp|com.sg|com.tw) https://www.google.com 302
 ^https?://books\.google\.(cn|.com.hk|co.jp|com.sg|com.tw) https://books.google.com 302
-^https?://(ditu|maps)\.(g|google)\.cn https://maps.google.com 302
+^https?://(ditu|maps)\.google\.cn https://maps.google.com 302
 
 [MITM]
-hostname = %INSERT% *.google.*
+hostname = %APPEND% *.google.*
