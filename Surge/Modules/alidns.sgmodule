@@ -1,3 +1,6 @@
+#!name=Ali DNS over QUIC
+#!desc=强制使用阿里 DNS over QUIC
+
 [General]
 encrypted-dns-server = quic://dns.alidns.com
 
