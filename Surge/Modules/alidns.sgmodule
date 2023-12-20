@@ -1,5 +1,4 @@
 [General]
-dns-server = system
 encrypted-dns-server = quic://dns.alidns.com
 
 [Host
