@@ -1,5 +1,6 @@
 #!name=Google Redirect
 #!desc=重定向谷歌搜索/图书/地图/翻译
+#!category=General
 
 [General]
 force-http-engine-hosts = %APPEND% *.google.cn
