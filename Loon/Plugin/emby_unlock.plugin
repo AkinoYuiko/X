@@ -1,0 +1,17 @@
+#!name=Emby Plus
+#!desc=解锁 Emby 播放权限
+#!author=RuCu6
+#!icon=https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Color/EMBY.png
+#!Date=2023-12-4 10:08
+
+[MITM]
+hostname = *.mb3admin.com,*.emby.wtf,*.plusmedia.site,*.xeton.dev,*.jmsooo.com
+
+[Script]
+http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/emby/unlock.js, requires-body=true, timeout=60, tag=播放解锁
+# 解决QX抓取某些公益服该请求乱码问题
+# http-request \/Users\/\w{32}\/Items\/\d+\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-header.js, timeout=30, tag=replaceHeader_4, argument="(\r\n)Accept-Encoding:.+->$Accept-Encoding: gzip, deflate, br"
+http-response \/Users\/\w{32}\/Items\/\d+\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/emby/embyPlus.js, requires-body=true, timeout=60, tag=添加外部播放器连接
+http-request \/plugin\/scheme script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/emby/embyPlus.js, timeout=60, tag=打开外部播放器
+http-request (\/Videos\/\d+\/stream\/.+\?.+&filename)|(\/Videos\/\d+\/\w{32}\/Subtitles\/\d+\/.+\?.+&filename) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/emby/embyPlus.js, timeout=60, tag=资源路径伪静态
+http-response (\/Videos\/\d+\/stream\/.+\?.+&filename)|(\/Videos\/\d+\/\w{32}\/Subtitles\/\d+\/.+\?.+&filename) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/emby/downloadFileRename2.js, timeout=60, tag=下载文件重命名

@@ -1,0 +1,50 @@
+ipv6: true
+log-level: info
+unified-delay: true
+tcp-concurrent: true
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  force-dns-mapping: true
+  override-destination: true
+  skip-domain: [Mijia Cloud]
+  sniff: {HTTP: {ports: [80, 8080]}, TLS: {ports: [443, 8443]}, QUIC: {ports: [443, 8443]}}
+dns:
+  ipv6: true
+  enable: true
+  listen: :1053
+  enhanced-mode: redir-host
+  nameserver: [quic://223.5.5.5, quic://223.6.6.6]
+profile: {store-selected: true}
+proxy-groups:
+  - { name: Proxy, type: select, use: [ Subscription ] }
+proxy-providers:
+  Subscription:
+    type: http
+    url: 订阅链接
+    path: ./subscription.yaml
+    interval: 36000
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+rules:
+  - RULE-SET,AdBlock,REJECT
+  - RULE-SET,Global,Proxy
+  - RULE-SET,cicndr,DIRECT
+  - MATCH,DIRECT
+rule-anchor:
+  ipcidr: &ipcidr {type: http, interval: 36000, behavior: ipcidr, format: text}
+  domain: &domain {type: http, interval: 36000, behavior: domain, format: text}
+  classical: &classical {type: http, interval: 36000, behavior: classical, format: text}
+rule-providers:
+  AdBlock:
+    <<: *classical
+    url: https://github.com/AkinoYuiko/X/raw/main/Surge/Rules/AdBlock.list
+  Global:
+    <<: *classical
+    url: https://github.com/AkinoYuiko/X/raw/main/Surge/Rules/Global.list
+  cncidr:
+    <<: *ipcidr
+    url: https://github.com/Masaiki/GeoIP2-CN/raw/release/CN-ip-cidr.txt
+

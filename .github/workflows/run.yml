@@ -1,0 +1,82 @@
+name: Generate Rules for Surge/Clash
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 23 * * *"
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set variables
+        run: |
+          echo "COMMIT_INFO=$(TZ='Asia/Shanghai' date +%F\ %H:%M:%S)" >> $GITHUB_ENV
+          echo "cn_cidr=https://github.com/misakaio/chnroutes2/raw/master/chnroutes.txt" >> $GITHUB_ENV
+          echo "cn_cidr6=https://ispip.clang.cn/all_cn_ipv6.txt" >> $GITHUB_ENV
+          echo "Loyalsoldier_reject=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/reject-list.txt" >> $GITHUB_ENV
+          echo "Loyalsoldier_gfw=https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt" >> $GITHUB_ENV
+          echo "Matrix_Discord=https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/Discord.list" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Checkout the default branch
+        uses: actions/checkout@v4
+
+      - name: Generate cncidr files
+        run: |
+          curl -sSL ${cn_cidr} | grep -Ev "^#" > cncidr.txt
+          curl -sSL ${cn_cidr} | perl -ne '/^(\d{1,3}(\.\d{1,3}){3}\/\d{1,2})/ && print "IP-CIDR,$1\n"' > cncidr.list
+          curl -sSL ${cn_cidr} | perl -ne '/^(\d{1,3}(\.\d{1,3}){3}\/\d{1,2})/ && print "  - $1\n"' > cncidr.yaml
+          curl -sSL ${cn_cidr6} >> cncidr.txt
+          curl -sSL ${cn_cidr6} | grep ":" | perl -ne '/(.+\/\d+)/ && print "IP-CIDR6,$1\n"' >> cncidr.list
+          curl -sSL ${cn_cidr6} | grep ":" | perl -ne '/(.+\/\d+)/ && print "  - $1\n"' >> cncidr.yaml
+          sed -i "1ipayload:" cncidr.yaml
+          sed -i "1i# Total: $(cat cncidr.txt | wc -l)" cncidr.*
+          sed -i "1i# Update: ${COMMIT_INFO}" cncidr.*
+
+      - name: Generate Discord files
+        run: |
+          curl -sSL ${Matrix_Discord} | grep -Ev '^$' | grep -Ev '^#' > Discord.list
+          cat Discord.list | sed 's/^/  - /' > Discord.yaml
+          echo "AND,((PROTOCOL,UDP),(DEST-PORT,>50000),(IP-ASN,49544,no-resolve))" >> Discord.list
+          echo "AND,((PROTOCOL,UDP),(DEST-PORT,>50000),(IP-ASN,15169,no-resolve))" >> Discord.list
+          sed -i "1i# Total: $(cat Discord.list|wc -l)" Discord.list
+          sed -i "1i# Total: $(cat Discord.yaml|wc -l)" Discord.yaml
+          sed -i "1i# Update: ${COMMIT_INFO}" Discord.*
+          sed -i "3ipayload:" Discord.yaml
+
+      - name: Generate Other files
+        run: |
+          declare -A Matrix
+          Matrix["AdBlock"]="https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/AdBlock.list"
+          Matrix["Apple"]="https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/Apple.list"
+          Matrix["Disney"]="https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/Disney.list"
+          Matrix["Global"]="https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/Global.list"
+          Matrix["Google"]="https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/Google.list"
+          Matrix["Netflix"]="https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/Netflix.list"
+          Matrix["OpenAI"]="https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/OpenAI.list"
+          Matrix["Steam"]="https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/Steam.list"
+          Matrix["YouTube"]="https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/YouTube.list"
+          for key in ${!Matrix[@]}
+          do
+            curl -sSL ${Matrix[${key}]} | grep -Ev '^$' | grep -Ev '^#' > ${key}".list"
+            cat ${key}".list" | sed "s/^/  - /" > ${key}".yaml"
+            sed -i "1ipayload:" ${key}".yaml"
+            sed -i "1i# Total: $(cat ${key}.list | wc -l)" ${key}.*
+            sed -i "1i# Update: ${COMMIT_INFO}" ${key}.*
+          done
+
+      - name: Move files to publish directory
+        run: |
+          git clone "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" publish
+          cp *.list ./publish/Surge/Rules/
+          cp *.yaml ./publish/Clash/Rules/
+          cp cncidr.txt ./publish/Mihomo/
+
+      - name: Git push assets
+        run: |
+          cd publish || exit 1
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "${{ env.COMMIT_INFO }}"
+          git push

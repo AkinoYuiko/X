@@ -1,0 +1,14 @@
+#!name = Google Redirect
+#!desc = 重定向谷歌搜索/图书/地图
+#!author = Civi
+#!homepage = https://github.com/AkinoYuiko/Rules/tree/master/Loon/Plugin
+#!date = 2023-11-27 21:36:17
+#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/Google.png
+
+[Rewrite]
+^https?:\/\/(www.)?(g|google)\.(cn|com.hk|co.jp|com.sg|com.tw) https://www.google.com 302
+^https?:\/\/books\.google\.(cn|.com.hk|co.jp|com.sg|com.tw) https://books.google.com 302
+^https?:\/\/(ditu|maps)\.(g|google)\.cn https://maps.google.com 302
+
+[MITM]
+hostname = *.google.*

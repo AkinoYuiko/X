@@ -1,0 +1,6 @@
+# Update: 2024-01-13 04:17:42
+# Total: 4
+DOMAIN,appleid.apple.com // “设置”和“系统偏好设置”中的 Apple ID 认证
+DOMAIN,appleid.cdn-apple.com // “设置”和“系统偏好设置”中的 Apple ID 认证
+DOMAIN,idmsa.apple.com // Apple ID 认证
+DOMAIN,gsa.apple.com // Apple ID 认证

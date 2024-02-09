@@ -1,0 +1,9 @@
+#!name=Github Pro
+#!desc=解锁Github Pro，除AI功能不能用其余正常
+#!author=Yu9191
+
+[Script]
+Github = type=http-response, pattern=https://api.github.com/graphql, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Github.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% api.github.com

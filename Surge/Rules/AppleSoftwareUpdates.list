@@ -1,0 +1,20 @@
+# Update: 2024-01-13 04:17:42
+# Total: 18
+DOMAIN,appldnld.apple.com // iOS、iPadOS 和 watchOS 更新
+DOMAIN,configuration.apple.com // Rosetta 2 更新
+DOMAIN,gdmf.apple.com // 软件更新目录
+DOMAIN,gg.apple.com // iOS、iPadOS、Apple tvOS、watchOS 和 macOS 更新
+DOMAIN,gs.apple.com // iOS、iPadOS、Apple tvOS、watchOS 和 macOS 更新
+DOMAIN,ig.apple.com // macOS 更新
+DOMAIN,mesu.apple.com // 托管软件更新目录
+DOMAIN,ns.itunes.apple.com
+DOMAIN,oscdn.apple.com // macOS 恢复
+DOMAIN,osrecovery.apple.com // macOS 恢复
+DOMAIN,skl.apple.com // macOS 更新
+DOMAIN,swcdn.apple.com // macOS 更新
+DOMAIN,swdist.apple.com // macOS 更新
+DOMAIN,swdownload.apple.com // macOS 更新
+DOMAIN,swscan.apple.com // macOS 更新
+DOMAIN,updates-http.cdn-apple.com // 软件更新下载
+DOMAIN,updates.cdn-apple.com // 软件更新下载
+DOMAIN,xp.apple.com

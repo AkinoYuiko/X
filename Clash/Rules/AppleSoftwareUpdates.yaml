@@ -1,0 +1,21 @@
+# Update: 2024-01-13 04:17:42
+# Total: 18
+payload:
+  - DOAMIN,appldnld.apple.com # iOS、iPadOS 和 watchOS 更新
+  - DOAMIN,configuration.apple.com # Rosetta 2 更新
+  - DOAMIN,gdmf.apple.com # 软件更新目录
+  - DOAMIN,gg.apple.com # iOS、iPadOS、Apple tvOS、watchOS 和 macOS 更新
+  - DOAMIN,gs.apple.com # iOS、iPadOS、Apple tvOS、watchOS 和 macOS 更新
+  - DOAMIN,ig.apple.com # macOS 更新
+  - DOAMIN,mesu.apple.com # 托管软件更新目录
+  - DOAMIN,ns.itunes.apple.com
+  - DOAMIN,oscdn.apple.com # macOS 恢复
+  - DOAMIN,osrecovery.apple.com # macOS 恢复
+  - DOAMIN,skl.apple.com # macOS 更新
+  - DOAMIN,swcdn.apple.com # macOS 更新
+  - DOAMIN,swdist.apple.com # macOS 更新
+  - DOAMIN,swdownload.apple.com # macOS 更新
+  - DOAMIN,swscan.apple.com # macOS 更新
+  - DOAMIN,updates-http.cdn-apple.com # 软件更新下载
+  - DOAMIN,updates.cdn-apple.com # 软件更新下载
+  - DOAMIN,xp.apple.com

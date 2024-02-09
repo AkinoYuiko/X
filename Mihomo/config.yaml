@@ -1,0 +1,44 @@
+ipv6: true
+unified-delay: true
+tcp-concurrent: true
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  force-dns-mapping: true
+  override-destination: false
+  sniff: {HTTP: {ports: [80, 8080], override-destination: true}, TLS: {ports: [443]}, QUIC: {ports: [443]}}
+dns:
+  ipv6: true
+  enable: true
+  hijack-dns: [any:53]
+  enhanced-mode: redir-host
+  nameserver: [quic://223.5.5.5, quic://223.6.6.6]
+profile: {store-selected: true}
+proxy-groups:
+  - {name: Proxy, type: select, proxies: [], use: [Subscription]}
+proxies: null
+rules:
+  - RULE-SET,AdBlock,REJECT
+  - RULE-SET,Global,Proxy
+  - RULE-SET,cncidr,DIRECT
+  - MATCH,Proxy
+anchors:
+  ipcidr: &ipcidr {type: http, interval: 36000, behavior: ipcidr, format: text}
+  domain: &domain {type: http, interval: 36000, behavior: domain, format: text}
+  classical: &classical {type: http, interval: 36000, behavior: classical, format: text}
+  pp: &pp {type: http, interval: 36000, health-check: { enable: true, interval: 600, url: http://1.1.1.1}}
+proxy-providers:
+  Subscription:
+    <<: *pp
+    url: "订阅链接"
+    path: ./proxies/subscription.yaml
+rule-providers:
+  AdBlock:
+    <<: *classical
+    url: https://github.com/AkinoYuiko/X/raw/main/Surge/Rules/AdBlock.list
+  Global:
+    <<: *classical
+    url: https://github.com/AkinoYuiko/X/raw/main/Surge/Rules/Global.list
+  cncidr:
+    <<: *ipcidr
+    url: https://github.com/AkinoYuiko/X/raw/main/Mihomo/cncidr.txt

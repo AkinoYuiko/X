@@ -1,0 +1,174 @@
+# 配置原作者: CentralSubscription3
+# 仓库地址：https://github.com/Centralmatrix3/Matrix-io/raw/master/Clash/Matrix.yaml
+
+mixed-port: 7890        # Mixed 端口
+allow-lan: true         # 允许局域网连接
+mode: Rule              # 规则模式
+log-level: info         # 日志级别
+ipv6: false             # IPv6开关
+
+# 外部控制器
+external-controller: 127.0.0.1:9090
+
+# DNS设置
+dns:
+  enable: false         # 禁用系统 DNS
+  ipv6: false           # 解析开关 IPv6
+  listen: 0.0.0.0:1053  # DNS 监听
+  default-nameserver:   # 常规 DNS
+    - 223.5.5.5
+  nameserver:           # 加密 DNS
+    - https://dns.alidns.com/dns-query
+    # - quic://dns.alidns.com   # 如果使用Mihomo（原Clash.Meta内核可以改用这个DNS）
+
+# 增强模式:fake-ip或redir-host
+  enhanced-mode: fake-ip
+
+# fake-ip:范围和过滤
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - localhost.ptlogin2.qq.com
+    - +.srv.nintendo.net
+    - +.stun.playstation.net
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+    - +.xboxlive.com
+    - msftconnecttest.com
+    - xbox.*.microsoft.com
+    - "*.battlenet.com.cn"
+    - "*.battlenet.com"
+    - "*.blzstatic.cn"
+    - "*.battle.net"
+    - "time.microsoft.com"
+    - "time.apple.com"
+  # fallback-filter:      # 回退过滤器
+  #   geoip: true         # GEOIP 启用
+  #   geoip-code: CN      # GEOIP 编码
+  #   ipcidr:             # IPCIDR
+  #     - 240.0.0.0/4
+  #     - 0.0.0.0/32
+
+# 更改GEOIP数据库
+geox-url:
+  mmdb: "https://github.com/Loyalsoldier/geoip/raw/release/Country.mmdb"
+
+# 代理
+proxies: null
+
+# 代理供应商
+proxy-providers:
+  Subscription:
+    type: http
+    url: "订阅链接" # 🧸
+    interval: 3600
+    path: ./server/Subscription.yaml
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 600
+
+# 代理策略组
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - 香港
+      - 台湾
+      - 日本
+      - 新加坡
+      - 美国
+    use:
+      - Subscription
+
+  - name: "香港"
+    type: url-test
+    filter: "香港|港|HK|🇭🇰|(?i)Hong"
+    use:
+      - Subscription
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+  - name: "台湾"
+    type: url-test
+    filter: "台湾|台|TW|🇹🇼|(?i)Taiwan"
+    use:
+      - Subscription
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+  - name: "日本"
+    type: url-test
+    filter: "日本|日|JP|🇯🇵|(?i)Japan"
+    use:
+      - Subscription
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+  - name: "新加坡"
+    type: url-test
+    filter: "新加坡|狮|SG|🇸🇬|(?i)Singapore"
+    use:
+      - Subscription
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+  - name: "美国"
+    type: url-test
+    filter: "美国|美|US|🇺🇸|(?i)States"
+    use:
+      - Subscription
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 1800
+
+# 规则集
+rule-providers:
+  Unbreak:
+    behavior: classical
+    interval: 86400
+    type: http
+    path: ./Ruleset/Unbreak.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/Unbreak.yaml
+
+  AdBlock:
+    behavior: domain
+    interval: 86400
+    type: http
+    path: ./Ruleset/AdBlock.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/AdBlock.yaml
+
+  Global:
+    behavior: classical
+    interval: 86400
+    type: http
+    path: ./Ruleset/Global.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/Global.yaml
+
+  direct:
+    behavior: domain
+    interval: 86400
+    type: http
+    path: ./ruleset/direct.yaml
+    url: "https://github.com/Loyalsoldier/clash-rules/raw/release/direct.txt"
+
+  LAN:
+    behavior: classical
+    interval: 86400
+    type: http
+    path: ./Ruleset/LAN.yaml
+    url: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Clash/Ruleset/LAN.yaml
+
+# 规则
+rules:
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,Unbreak,DIRECT
+  - RULE-SET,AdBlock,REJECT
+  - DOMAIN-KEYWORD,klei,DIRECT
+  - DOMAIN-KEYWORD,github,Proxy
+  - RULE-SET,Global,Proxy
+  - RULE-SET,direct,DIRECT
+  - GEOIP,TELEGRAM,DIRECT
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxy

@@ -1,0 +1,24 @@
+#!name=macOS General Settings
+#!desc=为macOS配置
+#!system=mac
+
+[General]
+# Game Mode
+udp-priority = true
+
+# DNS
+read-etc-hosts = true
+dns-server = 223.5.5.5, 223.6.6.6
+
+# Error Page
+show-error-page-for-reject = true
+
+# Always Real IPs
+always-real-ip = %APPEND% time.apple.com,time.microsoft.com
+
+# Skip Proxy (for non-enhanced mode)
+exclude-simple-hostnames = true
+skip-proxy = %APPEND% 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, e.crashlynatics.com
+
+# Bypass TUN
+tun-excluded-routes = %APPEND% 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32

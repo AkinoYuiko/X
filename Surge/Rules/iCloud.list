@@ -1,0 +1,20 @@
+# Update: 2024-01-13 04:17:42
+# Total: 18
+DOMAIN-SUFFIX,apple-cloudkit.com // iCloud 服务
+DOMAIN-SUFFIX,apple-livephotoskit.com // iCloud 服务
+DOMAIN-SUFFIX,apzones.com // 中国大陆的 iCloud 服务
+DOMAIN-SUFFIX,cdn-apple.com // iCloud 服务
+DOMAIN-SUFFIX,gc.apple.com // iCloud 服务
+DOMAIN-SUFFIX,icloud.com // iCloud 服务
+DOMAIN-SUFFIX,icloud.com.cn // 中国大陆的 iCloud 服务
+DOMAIN-SUFFIX,icloud.apple.com // iCloud 服务
+DOMAIN-SUFFIX,icloud-content.com // iCloud 服务
+DOMAIN-SUFFIX,iwork.apple.com // iWork 文稿
+DOMAIN,mask.icloud.com // iCloud 专用代理
+DOMAIN,mask-h2.icloud.com // iCloud 专用代理
+DOMAIN,mask-api.icloud.com // iCloud 专用代理
+DOMAIN,swdownload.apple.com // macOS 更新
+DOMAIN,swscan.apple.com // macOS 更新
+DOMAIN,updates-http.cdn-apple.com // 软件更新下载
+DOMAIN,updates.cdn-apple.com // 软件更新下载
+DOMAIN,xp.apple.com
