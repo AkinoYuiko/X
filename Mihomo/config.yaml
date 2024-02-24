@@ -4,7 +4,7 @@ tcp-concurrent: true
 geo-auto-update: true
 geo-update-interval: 24
 geox-url:
-  mmdb: "https://github.com/AkinoYuiko/geoip/raw/release/Country.mmdb"
+  mmdb: https://github.com/AkinoYuiko/geoip/raw/release/Country.mmdb
 sniffer:
   enable: true
   parse-pure-ip: true
@@ -31,7 +31,7 @@ anchors:
   ipcidr: &ipcidr {type: http, interval: 36000, behavior: ipcidr, format: text}
   domain: &domain {type: http, interval: 36000, behavior: domain, format: text}
   classical: &classical {type: http, interval: 36000, behavior: classical, format: text}
-  pp: &pp {type: http, interval: 36000, health-check: { enable: true, interval: 600, url: http://1.1.1.1}}
+  pp: &pp {type: http, interval: 36000, health-check: {enable: true, interval: 600, url: http://1.1.1.1/generate_204}}
 proxy-providers:
   Subscription:
     <<: *pp
