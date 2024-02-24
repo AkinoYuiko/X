@@ -1,6 +1,10 @@
 ipv6: true
 unified-delay: true
 tcp-concurrent: true
+geo-auto-update: true
+geo-update-interval: 24
+geox-url:
+  mmdb: "https://github.com/AkinoYuiko/geoip/raw/release/Country.mmdb"
 sniffer:
   enable: true
   parse-pure-ip: true
@@ -18,9 +22,10 @@ proxy-groups:
   - {name: Proxy, type: select, proxies: [], use: [Subscription]}
 proxies: null
 rules:
+  - RULE-SET,LAN,DIRECT
   - RULE-SET,AdBlock,REJECT
   - RULE-SET,Global,Proxy
-  - RULE-SET,cncidr,DIRECT
+  - GEOIP,CN,DIRECT
   - MATCH,Proxy
 anchors:
   ipcidr: &ipcidr {type: http, interval: 36000, behavior: ipcidr, format: text}
@@ -39,6 +44,6 @@ rule-providers:
   Global:
     <<: *classical
     url: https://github.com/AkinoYuiko/X/raw/main/Surge/Rules/Global.list
-  cncidr:
-    <<: *ipcidr
-    url: https://github.com/AkinoYuiko/X/raw/main/Mihomo/cncidr.txt
+  LAN:
+    <<: *classical
+    url: https://github.com/AkinoYuiko/X/raw/main/Surge/Rules/LAN.list
