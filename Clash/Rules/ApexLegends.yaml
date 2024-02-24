@@ -1,5 +1,5 @@
-# Update: 2024-01-08 07:32:59
-# Total: 3621
+# Update: 2024-02-24 23:40:57
+# Total: 3612
 payload:
   - DOMAIN-SUFFIX,stryder.respawn.com
   - DOMAIN-SUFFIX,easyanticheat.net
@@ -80,8 +80,6 @@ payload:
   - IP-CIDR,15.0.0.0/8,no-resolve
   - IP-CIDR,15.185.0.0/16,no-resolve
   - IP-CIDR,16.0.0.0/5,no-resolve
-  - IP-CIDR,20.190.163.18/32,no-resolve
-  - IP-CIDR,20.190.163.21/32,no-resolve
   - IP-CIDR,24.0.0.0/7,no-resolve
   - IP-CIDR,26.0.0.0/8,no-resolve
   - IP-CIDR,27.0.0.0/13,no-resolve
@@ -129,6 +127,7 @@ payload:
   - IP-CIDR,34.146.173.0/24,no-resolve
   - IP-CIDR,35.144.68.0/24,no-resolve
   - IP-CIDR,35.185.189.0/24,no-resolve
+  - IP-CIDR,35.190.80.1/32,no-resolve
   - IP-CIDR,35.199.73.0/24,no-resolve
   - IP-CIDR,35.201.19.0/24,no-resolve
   - IP-CIDR,35.247.197.0/24,no-resolve
@@ -162,12 +161,6 @@ payload:
   - IP-CIDR,39.112.0.0/12,no-resolve
   - IP-CIDR,39.192.0.0/10,no-resolve
   - IP-CIDR,40.0.0.0/7,no-resolve
-  - IP-CIDR,40.126.35.84/32,no-resolve
-  - IP-CIDR,40.126.35.128/32,no-resolve
-  - IP-CIDR,40.126.35.134/32,no-resolve
-  - IP-CIDR,40.126.35.144/32,no-resolve
-  - IP-CIDR,40.126.35.150/32,no-resolve
-  - IP-CIDR,40.126.35.151/32,no-resolve
   - IP-CIDR,42.0.4.0/22,no-resolve
   - IP-CIDR,42.0.28.0/22,no-resolve
   - IP-CIDR,42.0.64.0/18,no-resolve
@@ -2044,8 +2037,6 @@ payload:
   - IP-CIDR,103.244.0.0/14,no-resolve
   - IP-CIDR,103.248.0.0/13,no-resolve
   - IP-CIDR,104.0.0.0/7,no-resolve
-  - IP-CIDR,104.91.68.203/32,no-resolve
-  - IP-CIDR,104.91.68.226/32,no-resolve
   - IP-CIDR,104.155.233.0/24,no-resolve
   - IP-CIDR,104.196.0.0/16,no-resolve
   - IP-CIDR,104.197.0.0/16,no-resolve
@@ -2828,8 +2819,8 @@ payload:
   - IP-CIDR,140.254.0.0/16,no-resolve
   - IP-CIDR,141.0.0.0/8,no-resolve
   - IP-CIDR,142.0.0.0/7,no-resolve
-  - IP-CIDR,142.250.157.188/32,no-resolve
-  - IP-CIDR,142.251.42.237/32,no-resolve
+  - IP-CIDR,142.251.170.188/32,no-resolve
+  - IP-CIDR,142.251.220.78/32,no-resolve
   - IP-CIDR,144.1.0.0/16,no-resolve
   - IP-CIDR,144.2.0.0/15,no-resolve
   - IP-CIDR,144.4.0.0/15,no-resolve
