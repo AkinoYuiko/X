@@ -1,5 +1,5 @@
-# Update: 2024-03-05 07:04:25
-# Total: 95616
+# Update: 2024-03-06 07:04:08
+# Total: 95613
 payload:
   - DOMAIN-SUFFIX,0008d6ba2e.com
   - DOMAIN-SUFFIX,000dn.com
@@ -30845,8 +30845,6 @@ payload:
   - DOMAIN-SUFFIX,connect.facebook.com
   - DOMAIN-SUFFIX,graph-fallback.facebook.com
   - DOMAIN-SUFFIX,mqtt-mini.facebook.com
-  - DOMAIN-SUFFIX,star.c10r.facebook.com
-  - DOMAIN-SUFFIX,star.fallback.c10r.facebook.com
   - DOMAIN-SUFFIX,staticxx.facebook.com
   - DOMAIN-SUFFIX,z-m-graph.facebook.com
   - DOMAIN-SUFFIX,connect.facebook.net
@@ -37536,7 +37534,6 @@ payload:
   - DOMAIN-SUFFIX,gvkqpogjqvni.com
   - DOMAIN-SUFFIX,gvkzvgm.com
   - DOMAIN-SUFFIX,gvmojhugkiud.com
-  - DOMAIN-SUFFIX,gvt1-cn.com
   - DOMAIN-SUFFIX,gvyyhjyyfdgxij.xyz
   - DOMAIN-SUFFIX,gvzsrqp.com
   - DOMAIN-SUFFIX,gw-dv.vip
